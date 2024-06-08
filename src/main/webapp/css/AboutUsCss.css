@@ -1,0 +1,157 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Times, serif;
+}
+
+@font-face {
+    font-family: Roboto ;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("../images/Berber_flag.svg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    margin-left:130px;
+    width:80%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#ENSAM {
+    width: 70px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.logo-container p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px 0;
+    display: block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #ff8686;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    color:white;
+}
+
+.content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.team-member {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 800px;
+    display: flex;
+    align-items: center;
+}
+
+.member-info {
+    flex-grow: 1; /* Expand to fill available space */
+    padding-right: 20px; /* Add space between image and info */
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.team-member h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color:black;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #0077b5;
+    margin: 0 10px;
+}
+
+.social-links a:hover {
+    color: #004471;
+}
