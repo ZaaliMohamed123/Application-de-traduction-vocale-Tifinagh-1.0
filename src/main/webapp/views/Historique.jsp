@@ -31,6 +31,9 @@
         		List<Audio> AudioTif = (List<Audio>)request.getAttribute("AudioTifinagh");
         	%>
             <h1>Votre Historique</h1>
+            <%
+            	if(AudioTif.size()>0){
+            %>
             <div class="table-container">
                 <table class="audio-table">
                     <tbody>
@@ -50,6 +53,17 @@
                     </tbody>
                 </table>
             </div>
+            <%
+            	}else{
+            %>
+            <br>
+            <br>
+            <h2>Historique vide </h2>
+            <br>
+            <h2>Profitez de notre service de translation </h2>
+            <%
+            	}
+            %>
         </div>
     </div>
 </body>
