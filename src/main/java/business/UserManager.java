@@ -2,7 +2,6 @@ package business;
 
 import beans.User;
 import dao.UserDao;
-import dao.UserDaoImpl;
 
 public class UserManager implements UserBusiness{
 	

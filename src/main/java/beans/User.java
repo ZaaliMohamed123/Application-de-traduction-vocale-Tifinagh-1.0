@@ -5,13 +5,14 @@ public class User {
 	private String FullName ;
 	private String email;
 	private String passwd ;
+	
 	public User() {
-		super();
+		
 	}
 	
 	
 	public User(String fullName, String email, String passwd) {
-		super();
+		
 		FullName = fullName;
 		this.email = email;
 		this.passwd = passwd;
@@ -23,7 +24,7 @@ public class User {
 
 
 	public User(int userId, String fullName, String email, String passwd) {
-		super();
+		
 		this.userId = userId;
 		FullName = fullName;
 		this.email = email;
@@ -71,12 +72,6 @@ public class User {
 		return "User [userId=" + userId + ", email=" + email + ", passwd=" + passwd + "]";
 	}
 	
-	public boolean equals(User u) {
-		if(this.email.equals(u.getEmail()) && this.passwd.equals(u.getPasswd())) {
-			return true;
-		}
-		return false;
-	}
 	
 	
 	

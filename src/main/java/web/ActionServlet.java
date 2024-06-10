@@ -13,6 +13,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import business.Facade;
 
 
+
+
+@SuppressWarnings("serial")
 @MultipartConfig
 public class ActionServlet extends HttpServlet{
 	private Facade facade ;
@@ -21,7 +24,7 @@ public class ActionServlet extends HttpServlet{
 	@Override
 	public void init() throws ServletException {
 		facade = new Facade();
-		actions = new HashMap();
+		actions = new HashMap<String, Action>();
 		actions.put("Login", new LoginAction(facade));
 		actions.put("SignUp", new SignUpAction(facade));
 		actions.put("Upload", new UploadAction(facade));

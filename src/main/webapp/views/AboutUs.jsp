@@ -57,7 +57,7 @@
                     <img src="${pageContext.request.contextPath}/images/bilalpic.jpeg" alt="Bilal Lahfari">
                     <div class="member-info">
                         <h2>Bilal Lahfari</h2>
-                        <p>first-year Data Science & AI Engineering student at ENSAM Rabat. Passionate about bringing innovation to life by revealing insights from data. Let's connect and dive into the realm of data-driven possibilities!</p>
+                        <p>first-year Data Science and AI Engineering student at ENSAM Rabat. Passionate about bringing innovation to life by revealing insights from data. Let's connect and dive into the realm of data-driven possibilities!</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/bilal-lahfari-107854290/" target="_blank">LinkedIn</a>
                         </div>

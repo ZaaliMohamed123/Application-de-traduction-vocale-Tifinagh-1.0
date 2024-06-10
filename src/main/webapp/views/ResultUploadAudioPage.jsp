@@ -18,7 +18,7 @@
 		
 	%>
 	<div class="container">
-        <h1>Traduction D'audio Tifinagh</h1>
+        <h1>Tifinagh Audio Translation</h1>
         <div class="audio-section">
             <h2>Tifinagh <%=a0.getAudioName() %></h2>
             <audio controls>

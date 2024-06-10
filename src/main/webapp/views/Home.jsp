@@ -30,16 +30,16 @@
             </div>
         </header>
         <div class="content">
-            <h1>Bienvenue <%=u.getFullName() %></h1>
-            <pre>Bienvenue a ENSAM Tifinagh application
-                La première platforme de traduction de Tifinagh dans le monde
+            <h1>Welcome <%=u.getFullName() %></h1>
+            <pre>Welcome to the ENSAM Tifinagh application
+				The first Tifinagh translation platform in the world
             </pre>
 
 
             <div class="button-container">
-                <a href="UploadAudioPage.jsp"><button type="button" class="btn">Traduire un Audio</button></a>
-                <a href="Historique.do"><button type="button" class="btn">Historique</button></a>
-                <a href="Deconnecter.do"><button type="button" class="btn">Deconnecter</button></a>
+                <a href="UploadAudioPage.jsp"><button type="button" class="btn">Translate an Audio</button></a>
+                <a href="Historique.do"><button type="button" class="btn">History</button></a>
+                <a href="Deconnecter.do"><button type="button" class="btn">Disconnect</button></a>
             </div>
         </div>
     </div>

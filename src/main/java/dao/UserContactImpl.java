@@ -3,7 +3,6 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import com.mysql.cj.xdevapi.PreparableStatement;
 
 public class UserContactImpl implements UserContact{
 	

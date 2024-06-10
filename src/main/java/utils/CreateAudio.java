@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,8 +16,9 @@ import dao.AudioDaoImpl;
 
 public class CreateAudio {
 	
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		/*
+		
 		AudioDao adao = new AudioDaoImpl();
 		Path dir1 = Paths.get("Audios/AudioAr");
 		Path dir2 = Paths.get("Audios/AudioFr");
@@ -66,7 +65,7 @@ public class CreateAudio {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		*/
+		
 		
 	}
 
@@ -79,8 +78,7 @@ public class CreateAudio {
         long audioSizeInBytes = Files.size(path);
         int audioSizeInKb = (int) (audioSizeInBytes / 1024);
         byte[] audioContent = Files.readAllBytes(path);
-        int AudioTifinaghId = Integer.parseInt(extractAudioNumber(audioName));
-
+        
         return new Audio(0, audioName,audioLanguage, audioSizeInKb, audioExtension, audioContent);
     }
     
