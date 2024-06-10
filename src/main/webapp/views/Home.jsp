@@ -32,7 +32,7 @@
         <div class="content">
             <h1>Welcome <%=u.getFullName() %></h1>
             <pre>Welcome to the ENSAM Tifinagh application
-				The first Tifinagh translation platform in the world
+The first Tifinagh translation platform in the world
             </pre>
 
 
