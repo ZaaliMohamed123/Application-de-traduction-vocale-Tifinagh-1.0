@@ -4,17 +4,17 @@
 
 Le projet ENSAM Tifinagh est une application web innovante qui permet aux utilisateurs de traduire des fichiers audio en langue Tifinagh. cette application offre une interface conviviale et une expérience utilisateur fluide. Les utilisateurs peuvent créer des comptes, télécharger des fichiers audio pour traduction, consulter l'historique de leurs traductions, et envoyer des messages à l'ENSAM via un formulaire de contact intégré. L'application se distingue par son architecture robuste utilisant HTML, CSS, JSP, et Java, assurant une performance optimale et une maintenance facilitée.
 
-## Fonctionnalités
+## Caractéristiques
 
-- **Page d'Accueil** : Présentation du nom de l'application avec une barre de navigation pour explorer le projet, ainsi que des boutons de connexion et d'inscription.
-- **Page des Services** : Informations sur les différents services offerts par l'application.
-- **Page À propos** : Détails sur les membres du projet.
-- **Page Contactez-nous** : Un formulaire pour que les utilisateurs envoient des messages à l'ENSAM Rabat.
-- **Page Merci** : Un message de remerciement affiché après qu'un utilisateur soumette le formulaire de contact.
+- **Page Home** : Présentation du nom de l'application avec une barre de navigation pour explorer le projet, ainsi que des boutons de connexion et d'inscription.
+- **Page Services** : Informations sur les différents services offerts par l'application.
+- **Page About Us** : Détails sur les membres du projet.
+- **Page Contact-Us** : Un formulaire pour que les utilisateurs envoient des messages.
+- **Page Thanks page** : Un message de remerciement affiché après qu'un utilisateur soumette le formulaire de contact.
 - **Page Login** : Permet à l'utilisateur d'accéder à son compte.
-- **Page Signup** : Permet à l'utilisateur de créer un compte.
-- **Page Télécharger l'Audio** : Pour télécharger l'audio que l'utilisateur souhaite traduire.
-- **Page Historique** : Affiche tous les audios de l'utilisateur que l'application a traduits.
+- **Page SignUp** : Permet à l'utilisateur de créer un compte.
+- **Page Upload Audio** : Pour télécharger l'audio que l'utilisateur souhaite traduire.
+- **Page History** : Affiche tous les audios de l'utilisateur que l'application a traduits.
 
 ## Technologies Utilisées
 
@@ -40,7 +40,7 @@ Le projet nécessite les éléments suivants :
 4. Allez à `/Application de traduction vocale Tifinagh 1.0/src/main/java/utils/CreateAudio.java` et exécutez la classe.
 5. Allez à `/Application de traduction vocale Tifinagh 1.0/src/main/webapp/views/index.html` et exécutez-le sur le serveur.
 6. Profitez de notre application.
-7. Lors de la traduction de l'audio, choisissez un fichier audio dans notre dossier `Audios/AudioTifinagh`, car le projet ne peut actuellement traduire que ces audios. Nous mettrons à jour prochainement pour permettre la traduction de tous les audios.
+7. Lors de la traduction de l'audio, choisissez un fichier audio dans notre dossier `Audios/AudioTifinagh`.
 
 ## Usage
 
