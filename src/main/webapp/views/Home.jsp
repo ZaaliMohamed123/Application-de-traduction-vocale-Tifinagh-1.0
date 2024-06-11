@@ -39,7 +39,7 @@ The first Tifinagh translation platform in the world
             <div class="button-container">
                 <a href="UploadAudioPage.jsp"><button type="button" class="btn">Translate an Audio</button></a>
                 <a href="Historique.do"><button type="button" class="btn">History</button></a>
-                <a href="Deconnecter.do"><button type="button" class="btn">Disconnect</button></a>
+                <a href="Disconnect.do"><button type="button" class="btn">Disconnect</button></a>
             </div>
         </div>
     </div>

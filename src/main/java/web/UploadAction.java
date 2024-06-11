@@ -25,12 +25,10 @@ public class UploadAction extends Action{
 		try {
 			//Translation language 
 			String language = req.getParameter("language");
-			System.out.println(language);
 			
 	        // Get file part
 	        
 	        Part filePart = req.getPart("audioFile");
-	        System.out.println(filePart);
 	        
 	        // Get file name and extension
 	        String fileName = filePart.getSubmittedFileName();
@@ -58,7 +56,6 @@ public class UploadAction extends Action{
 	        
 	        // Create User object
 	        User user = (User) session.getAttribute("user");
-	        System.out.println("user in upload  "+user);
 	        
 	        //Audio Test if exists
 	        if(facade.selectAudioByNameByUser(audioName,user)!=null) {

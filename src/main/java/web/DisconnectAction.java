@@ -4,20 +4,23 @@ import business.Facade;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class DeconnecterAction extends Action{
+public class DisconnectAction extends Action {
 
-	public DeconnecterAction(Facade facade) {
+	public DisconnectAction(Facade facade) {
 		super(facade);
 		
 	}
 
 	@Override
 	String execute(HttpServletRequest req, HttpServletResponse resp) {
-		// Invalidate the session to remove all attributes especially user attribute
-        req.getSession().invalidate();
-        
-        return "index.html" ;
+    	
+        // Remove the user attribute manually
+        req.getSession().removeAttribute("user");
 
+        // Invalidate the session to remove all attributes
+        req.getSession().invalidate();
+
+        return "index.html";
 	}
 
 }

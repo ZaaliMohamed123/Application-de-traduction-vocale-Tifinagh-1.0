@@ -17,12 +17,9 @@ public class LoginAction extends Action{
 
 	
 	String execute(HttpServletRequest req, HttpServletResponse resp) {
-		String uri = req.getRequestURI();
-		System.out.println(uri);
 		String email = req.getParameter("email");
 		String passwd = req.getParameter("password");
 		User u = facade.selectUser(email, passwd);
-		System.out.println(u);
 		if(u!=null) {
 			HttpSession session = req.getSession();
 			session.setAttribute("user", u);
