@@ -10,7 +10,7 @@ Le projet ENSAM Tifinagh est une application web innovante qui permet aux utilis
 - **Page Services** : Informations sur les différents services offerts par l'application.
 - **Page About Us** : Détails sur les membres du projet.
 - **Page Contact-Us** : Un formulaire pour que les utilisateurs envoient des messages.
-- **Page Thanks ** : Un message de remerciement affiché après qu'un utilisateur soumette le formulaire de contact.
+- **Page Thanks** : Un message de remerciement affiché après qu'un utilisateur soumette le formulaire de contact.
 - **Page Login** : Permet à l'utilisateur d'accéder à son compte.
 - **Page SignUp** : Permet à l'utilisateur de créer un compte.
 - **Page Upload Audio** : Pour télécharger l'audio que l'utilisateur souhaite traduire.
