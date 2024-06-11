@@ -11,9 +11,6 @@ public class UserContactManager implements UserContactBusiness{
 		this.us = new UserContactImpl();
 	}
 	
-	public UserContactManager(UserContact us) {
-		this.us = us;
-	}
 
 	@Override
 	public void addUserContact(String name, String email, String message) {

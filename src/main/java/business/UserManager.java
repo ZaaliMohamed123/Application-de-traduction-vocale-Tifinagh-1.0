@@ -2,27 +2,18 @@ package business;
 
 import beans.User;
 import dao.UserDao;
+import dao.UserDaoImpl;
 
 public class UserManager implements UserBusiness{
 	
 	private UserDao udao ;
 	
 	public UserManager(){
+		udao = new UserDaoImpl();
 		
 	}
 	
-	public UserManager(UserDao udao) {
-		this.udao = udao;
-	}
 	
-
-	public UserDao getUdao() {
-		return udao;
-	}
-
-	public void setUdao(UserDao udao) {
-		this.udao = udao;
-	}
 
 	@Override
 	public void addUser(User u) {

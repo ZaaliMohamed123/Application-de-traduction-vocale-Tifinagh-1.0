@@ -5,29 +5,13 @@ import java.util.List;
 import beans.Audio;
 import beans.User;
 import dao.AudioDao;
+import dao.AudioDaoImpl;
 
 public class AudioManager implements AudioBusiness{
 	private AudioDao adao ;
 	
 	public AudioManager() {
-		
-	}
-
-
-	public AudioManager(AudioDao adao) {
-		this.adao = adao;
-	}
-	
-	
-
-	public AudioDao getAdao() {
-		return adao;
-	}
-
-
-
-	public void setAdao(AudioDao adao) {
-		this.adao = adao;
+		adao = new AudioDaoImpl();
 	}
 
 

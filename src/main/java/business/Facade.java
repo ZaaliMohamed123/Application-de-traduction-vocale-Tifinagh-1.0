@@ -12,20 +12,20 @@ import dao.UserDao;
 import dao.UserDaoImpl;
 
 public class Facade {
-	private UserDao udao;
+	
 	private UserBusiness ubusiness ;
-	private AudioDao adao ;
+
 	private AudioBusiness abusiness ;
-	private UserContact ucdao;
+	
 	private UserContactBusiness ucbusiness ;
 
 	public Facade() {
-		udao = new UserDaoImpl();
-		ubusiness = new UserManager(udao);
-		adao = new AudioDaoImpl();
-		abusiness = new AudioManager(adao);
-		ucdao = new UserContactImpl();
-		ucbusiness = new UserContactManager(ucdao);
+		
+		ubusiness = new UserManager();
+		
+		abusiness = new AudioManager();
+		
+		ucbusiness = new UserContactManager();
 	}
 	
 	public void ajouterUser(User u) {
@@ -39,7 +39,7 @@ public class Facade {
 	
 	
 	public void insertAudio(Audio a,User u) {
-		adao.insert(a,u);
+		abusiness.add(a, u);
 	}
 	
 	
