@@ -1,5 +1,4 @@
 @charset "ISO-8859-1";
-/* General reset and typography */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +6,6 @@
     box-sizing: border-box;
 }
 
-/* Custom font face */
 @font-face {
     font-family: 'Roboto';
     src: url("../fonts/Roboto-Regular.ttf");
@@ -19,7 +17,6 @@ body {
     background-position: center;
 }
 
-/* Banner styling */
 .historique-banner {
     width: 100%;
     min-height: 100vh;
@@ -29,7 +26,6 @@ body {
     justify-content: flex-start;
 }
 
-/* Header styling */
 .header {
     display: flex;
     justify-content: space-between;
@@ -103,11 +99,10 @@ body {
     width: 100%;
 }
 
-/* Content styling */
 .content {
     width: 100%;
-    padding-top: 60px; /* Ensure there is space for the header */
-    padding-bottom: 60px; /* Added padding to the bottom to avoid sticking */
+    padding-top: 60px; 
+    padding-bottom: 60px; 
     text-align: center;
     color: #fff;
 }

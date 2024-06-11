@@ -62,7 +62,6 @@ public class CreateAudio {
 			}
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -90,26 +89,23 @@ public class CreateAudio {
     public static String getFileExtension(String fileName) {
         int dotIndex = fileName.lastIndexOf('.');
         if (dotIndex == -1) {
-            return ""; // No extension found
+            return ""; 
         }
         return fileName.substring(dotIndex + 1);
     }
     
     public static String extractAudioNumber(String audioName) {
         if (audioName == null || !audioName.startsWith("Audio")) {
-            return null; // Invalid format
+            return null; 
         }
 
-        // Extract the part after "Audio"
         String remaining = audioName.substring(5);
 
-        // Use regex to separate number and language
         String number = remaining.replaceAll("[^0-9]", "");
    
 
-        // Validate extracted parts
         if (number.isEmpty() ) {
-            return null; // Invalid format
+            return null; 
         }
 
         return number;
@@ -117,20 +113,17 @@ public class CreateAudio {
 	
 	public static String extractAudioLanguage(String audioName) {
         if (audioName == null || !audioName.startsWith("Audio")) {
-            return null; // Invalid format
+            return null; 
         }
 
-        // Extract the part after "Audio"
         String remaining = audioName.substring(5);
         String extension = getFileExtension(remaining);
         remaining = remaining.replace("."+extension, "");
 
-        // Use regex to separate number and language
         String language = remaining.replaceAll("[0-9]", "");
 
-        // Validate extracted parts
         if (language.isEmpty()) {
-            return null; // Invalid format
+            return null; 
         }
 
         return language;

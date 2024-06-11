@@ -19,12 +19,11 @@ public class UserDaoImpl implements UserDao{
 		try {
 			String query = "INSERT INTO user (fullName,email, passwd) VALUES (?,?, ?)";
 			PreparedStatement statement = cnx.prepareStatement(query);
-			// Set parameters for the PreparedStatement
+			
 			statement.setString(1, u.getFullName());
             statement.setString(2, u.getEmail());
             statement.setString(3, u.getPasswd());
 
-            // Execute the query
             int rowsInserted = statement.executeUpdate();
             if(rowsInserted > 0) {
             	System.out.println("User inserted");
@@ -43,11 +42,9 @@ public class UserDaoImpl implements UserDao{
 	        String query = "SELECT * FROM user WHERE email = ? and passwd = ?";
 	        PreparedStatement statement = cnx.prepareStatement(query);
 	        
-	        // Set parameter for the PreparedStatement
-            statement.setString(1, email);
+	        statement.setString(1, email);
             statement.setString(2, passwd);
             
-            // Execute the query
             ResultSet resultSet = statement.executeQuery();
             
             while (resultSet.next()) {
@@ -56,7 +53,6 @@ public class UserDaoImpl implements UserDao{
                 String fetchedEmail = resultSet.getString("email");
                 String fetchedPasswd = resultSet.getString("passwd");
 
-                // Create a User object with fetched data
                 user = new User(fetchedUserId , fetchedFullName,fetchedEmail, fetchedPasswd);
             }
             return user;

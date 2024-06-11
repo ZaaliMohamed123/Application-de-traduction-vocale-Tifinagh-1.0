@@ -50,8 +50,7 @@ public class ActionServlet extends HttpServlet {
 
     @Override
     public void destroy() {	
-    	// Explicitly shut down the abandoned connection cleanup thread
-        com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkedShutdown();
+    	com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkedShutdown();
         super.destroy();
     }
 }

@@ -44,28 +44,28 @@ public class AudioDaoImpl implements AudioDao{
 	
 	public void insertTranslatedAudio(Audio a,int AudioTifinaghId) {
 		try {
-			// Disable foreign key checks
+			
 	        String disableFKChecks = "SET FOREIGN_KEY_CHECKS=0";
 	        PreparedStatement disableStatement = cnx.prepareStatement(disableFKChecks);
 	        disableStatement.executeUpdate();
 	        
-	        // Insert into audiotranslated table
+	        
 			String query = "INSERT INTO audiotranslated (AudioTrName,AudioLanguage, AudioSizeInKb, AudioExtension, AudioContent,AudioTifinaghId) VALUES (?, ?, ?, ?,?,?)";
 			PreparedStatement statement = cnx.prepareStatement(query);
-			// Set parameters for the PreparedStatement
+			
             statement.setString(1, a.getAudioName());
             statement.setString(2, a.getAudioLanguage());
             statement.setInt(3, a.getAudioSizeInKb());
             statement.setString(4, a.getAudioExtension());
             statement.setBytes(5, a.getAudioContent());
             statement.setInt(6, AudioTifinaghId);
-            // Execute the query
+            
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Audio inserted successfully.");
             }
             
-            // Re-enable foreign key checks
+            
             String enableFKChecks = "SET FOREIGN_KEY_CHECKS=1";
             PreparedStatement enableStatement = cnx.prepareStatement(enableFKChecks);
             enableStatement.executeUpdate();
@@ -87,13 +87,10 @@ public class AudioDaoImpl implements AudioDao{
         	 String query = "SELECT * FROM audiotifinagh WHERE AudioName = ?";
         	 PreparedStatement statement = cnx.prepareStatement(query);
         	 
-        	// Set parameter for the PreparedStatement
-             statement.setString(1, AudioName);
+        	 statement.setString(1, AudioName);
 
-             // Execute the query
              ResultSet resultSet = statement.executeQuery();
 
-             // Process the result set
              while (resultSet.next()) {
             	 int audioId = resultSet.getInt("AudioId");
                  String audioName = resultSet.getString("AudioName");
@@ -101,7 +98,6 @@ public class AudioDaoImpl implements AudioDao{
                  String audioExtension = resultSet.getString("AudioExtension");
                  byte[] audioContent = resultSet.getBytes("AudioContent");
 
-                 // Create a new Audio object with fetched data
                  audio = new Audio(audioId, audioName, audioSizeInKb, audioExtension, audioContent);
              }
              
@@ -119,14 +115,11 @@ public class AudioDaoImpl implements AudioDao{
         	 String query = "SELECT * FROM audiotifinagh WHERE AudioName = ? and userId = ?";
         	 PreparedStatement statement = cnx.prepareStatement(query);
         	 
-        	// Set parameter for the PreparedStatement
-             statement.setString(1, AudioName);
+        	 statement.setString(1, AudioName);
              statement.setInt(2, u.getUserId());
 
-             // Execute the query
              ResultSet resultSet = statement.executeQuery();
 
-             // Process the result set
              while (resultSet.next()) {
             	 int audioId = resultSet.getInt("AudioId");
                  String audioName = resultSet.getString("AudioName");
@@ -134,7 +127,6 @@ public class AudioDaoImpl implements AudioDao{
                  String audioExtension = resultSet.getString("AudioExtension");
                  byte[] audioContent = resultSet.getBytes("AudioContent");
 
-                 // Create a new Audio object with fetched data
                  audio = new Audio(audioId, audioName, audioSizeInKb, audioExtension, audioContent);
              }
              
@@ -153,13 +145,10 @@ public class AudioDaoImpl implements AudioDao{
         try {
              PreparedStatement statement = cnx.prepareStatement(query);
 
-            // Set parameter for the PreparedStatement
             statement.setInt(1, userId);
 
-            // Execute the query
             ResultSet resultSet = statement.executeQuery();
 
-            // Process the result set
             while (resultSet.next()) {
                 int audioId = resultSet.getInt("AudioId");
                 String audioName = resultSet.getString("AudioName");
@@ -167,10 +156,8 @@ public class AudioDaoImpl implements AudioDao{
                 int audioSizeInKb = resultSet.getInt("AudioSizeInKb");
                 byte[] audioContent = resultSet.getBytes("AudioContent");
 
-                // Create a new Audio object with fetched data
                 Audio audio = new Audio(audioId, audioName, audioSizeInKb, audioExtension, audioContent);
 
-                // Add Audio object to the list
                 audioList.add(audio);
             }
 
@@ -191,24 +178,19 @@ public class AudioDaoImpl implements AudioDao{
 	    try {
 	        PreparedStatement statement = cnx.prepareStatement(query);
 
-	        // Set parameter for the PreparedStatement
 	        statement.setString(1, audioTrName);
 
-	        // Execute the query
 	        ResultSet resultSet = statement.executeQuery();
 
-	        // Process the result set
-	        while (resultSet.next()) {
+	         while (resultSet.next()) {
 	            int audioTrId = resultSet.getInt("AudioTrId");
 	            String audioLanguage = resultSet.getString("AudioLanguage");
 	            int audioSizeInKB = resultSet.getInt("AudioSizeInKB");
 	            String audioExtension = resultSet.getString("AudioExtension");
 	            byte[] audioContent = resultSet.getBytes("AudioContent");
 
-	            // Create a new Audio object representing translated audio
 	            Audio audio = new Audio(audioTrId, audioTrName, audioLanguage, audioSizeInKB, audioExtension, audioContent);
 
-	            // Add Audio object to the list
 	            audioList.add(audio);
 	        }
 
@@ -231,14 +213,11 @@ public class AudioDaoImpl implements AudioDao{
         try {
              PreparedStatement statement = cnx.prepareStatement(query);
 
-            // Set parameter for the PreparedStatement
-            statement.setString(1, audioTifinaghName);
+             statement.setString(1, audioTifinaghName);
             statement.setString(2, Language);
 
-            // Execute the query
             ResultSet resultSet = statement.executeQuery();
 
-            // Process the result set
             while (resultSet.next()) {
                 int audioTrId = resultSet.getInt("AudioTrId");
                 String audioTrName = resultSet.getString("AudioTrName");
@@ -247,7 +226,6 @@ public class AudioDaoImpl implements AudioDao{
                 String audioExtension = resultSet.getString("AudioExtension");
                 byte[] audioContent = resultSet.getBytes("AudioContent");
 
-                // Create a new Audio object representing translated audio
                 audio = new Audio(audioTrId, audioTrName, audioLanguage, audioSizeInKB, audioExtension, audioContent);
 
                 
@@ -262,17 +240,14 @@ public class AudioDaoImpl implements AudioDao{
     }
 
 	public void delete(int audioId) {
-	    // SQL queries to disable and re-enable foreign key checks
 	    String disableFKChecks = "SET FOREIGN_KEY_CHECKS = 0";
 	    String enableFKChecks = "SET FOREIGN_KEY_CHECKS = 1";
 	    String deleteQuery = "DELETE FROM audiotifinagh WHERE AudioId = ?";
 
 	    try {
-	        // Disable foreign key checks
 	        PreparedStatement disableStmt = cnx.prepareStatement(disableFKChecks);
 	        disableStmt.execute();
 
-	        // Perform the delete operation
 	        PreparedStatement deleteStmt = cnx.prepareStatement(deleteQuery);
 	        deleteStmt.setInt(1, audioId);
 
@@ -283,7 +258,6 @@ public class AudioDaoImpl implements AudioDao{
 	            System.out.println("No audio found with AudioId " + audioId + ". Nothing deleted.");
 	        }
 
-	        // Re-enable foreign key checks
 	        PreparedStatement enableStmt = cnx.prepareStatement(enableFKChecks);
 	        enableStmt.execute();
 

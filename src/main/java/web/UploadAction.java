@@ -23,28 +23,22 @@ public class UploadAction extends Action{
 	String execute(HttpServletRequest req, HttpServletResponse resp) {
 		HttpSession session = req.getSession();
 		try {
-			//Translation language 
 			String language = req.getParameter("language");
 			
-	        // Get file part
 	        
 	        Part filePart = req.getPart("audioFile");
 	        
-	        // Get file name and extension
 	        String fileName = filePart.getSubmittedFileName();
 	        String fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
 	        String audioName = fileName.replace("."+CreateAudio.getFileExtension(fileName), "");
 	        String AudioId = CreateAudio.extractAudioNumber(audioName);
 			int AudioIdnum = Integer.parseInt(AudioId);
 
-	        // Get file content
 	        InputStream inputStream = filePart.getInputStream();
 	        byte[] audioContent = inputStream.readAllBytes();
 
-	        // Calculate file size in KB
 	        int audioSizeInKb = (int) (audioContent.length / 1024);
 
-	        // Create Audio object
 	        Audio audio = new Audio();
 	        audio.setAudioId(AudioIdnum);
 	        audio.setAudioName(audioName);
@@ -54,10 +48,8 @@ public class UploadAction extends Action{
 	        audio.setAudioContent(audioContent);
 	        
 	        
-	        // Create User object
 	        User user = (User) session.getAttribute("user");
 	        
-	        //Audio Test if exists
 	        if(facade.selectAudioByNameByUser(audioName,user)!=null) {
 	        	Audio a0 = facade.selectAudioByName(audioName);
 	        	System.out.println(a0);
@@ -68,8 +60,7 @@ public class UploadAction extends Action{
 		        req.setAttribute("language", language);
 	        	return "AudioAlreadyExistsPage.jsp";
 	        }else {
-	        	// Insert Audio object into database
-	   	     
+	        	
 		        facade.insertAudio(audio,user);
 		        
 		        Audio a0 = facade.selectAudioByName(audioName);

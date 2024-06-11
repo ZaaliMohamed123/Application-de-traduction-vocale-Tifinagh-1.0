@@ -6,9 +6,9 @@ public class Audio {
 	private String audioLanguage;
     private int audioSizeInKb;
     private String audioExtension;
-    private byte[] audioContent; // Representing audio content as byte array
+    private byte[] audioContent; 
 
-    // Constructors
+    
     public Audio() {
     }
 
