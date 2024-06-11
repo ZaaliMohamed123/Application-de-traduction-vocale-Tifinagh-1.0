@@ -102,6 +102,6 @@ Le projet nécessite les éléments suivants :
 ## Membres de l'Équipe
 
 - **ZAALI Mohamed**
-- **Sekal Douaa**
+- **Sekal Douaâ**
 - **Lahfari Bilal**
 - **Khazaz Ayoub**
