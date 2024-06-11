@@ -2,7 +2,7 @@
 
 ## Description du Projet
 
-Le projet ENSAM Tifinagh est une application web innovante qui permet aux utilisateurs de traduire des fichiers audio en langue Tifinagh. cette application offre une interface conviviale et une expérience utilisateur fluide. Les utilisateurs peuvent créer des comptes, télécharger des fichiers audio pour traduction, consulter l'historique de leurs traductions, et envoyer des messages à l'ENSAM via un formulaire de contact intégré. L'application se distingue par son architecture robuste utilisant HTML, CSS, JSP, et Java, assurant une performance optimale et une maintenance facilitée.
+Le projet ENSAM Tifinagh est une application web innovante qui permet aux utilisateurs de traduire des fichiers audio en langue Tifinagh. cette application offre une interface conviviale et une expérience utilisateur fluide. Les utilisateurs peuvent créer des comptes, télécharger des fichiers audio pour traduction, consulter l'historique de leurs traductions, et envoyer des messages via un formulaire de contact intégré. L'application se distingue par son architecture robuste utilisant HTML, CSS, JSP, et Java, assurant une performance optimale et une maintenance facilitée.
 
 ## Caractéristiques
 
