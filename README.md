@@ -64,7 +64,7 @@ Le projet nécessite les éléments suivants :
   - Coordonnées et rôles de chaque membre.
 
 ### Page Contactez-nous
-- **Description**: Un formulaire de contact pour que les utilisateurs envoient des messages à l'ENSAM Rabat.
+- **Description**: Un formulaire de contact pour que les utilisateurs envoient des messages.
 - **Fonctionnalités**:
   - Champs pour le nom, l'email et le message de l'utilisateur.
   - Un bouton de soumission pour envoyer le message.
