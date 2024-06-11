@@ -67,35 +67,6 @@ public class UserDaoImpl implements UserDao{
 		return null;
 	}
 	
-	public User select(int UserId) {
-		try {
-			User user = null;
-	        String query = "SELECT * FROM user WHERE UserId = ? ";
-	        PreparedStatement statement = cnx.prepareStatement(query);
-	        
-	        // Set parameter for the PreparedStatement
-            statement.setInt(1, UserId);
-            
-            // Execute the query
-            ResultSet resultSet = statement.executeQuery();
-            
-            while (resultSet.next()) {
-            	int fetchedUserId = resultSet.getInt(1);
-            	String fetchedFullName = resultSet.getString(2);
-                String fetchedEmail = resultSet.getString("email");
-                String fetchedPasswd = resultSet.getString("passwd");
-
-                // Create a User object with fetched data
-                user = new User(fetchedUserId , fetchedFullName,fetchedEmail, fetchedPasswd);
-            }
-            return user;
-		} catch (Exception e) {
-			System.out.println("Error selecting user by email: " + e.getMessage());
-            e.printStackTrace();
-		}
-		return null;
-	}
-	
 	
 	
 	

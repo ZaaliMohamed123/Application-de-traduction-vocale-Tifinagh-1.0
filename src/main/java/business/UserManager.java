@@ -35,8 +35,5 @@ public class UserManager implements UserBusiness{
 		return udao.select(email, passwd);
 	}
 	
-	public User getUser(int UserId) {
-		return udao.select(UserId);
-	}
-
+	
 }

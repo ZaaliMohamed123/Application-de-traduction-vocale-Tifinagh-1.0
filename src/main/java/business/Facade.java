@@ -36,25 +36,18 @@ public class Facade {
 	}
 	
 	
-	public void insertAudio(Audio a) {
-		adao.insert(a);
-	}
+	
 	
 	public void insertAudio(Audio a,User u) {
 		adao.insert(a,u);
 	}
 	
-	public User selectUserById(int UserId) {
-		return ubusiness.getUser(UserId);
-	}
+	
 	
 	public Audio selectAudioByName(String AudioName) {
 		return abusiness.getAudioByName(AudioName);
 	}
 	
-	public List<Audio> selectAllTrAudio(int AudioTifId){
-		return abusiness.getAllTrAudio(AudioTifId);
-	}
 	
 	public List<Audio> selectAllTrAudiosByName(String audioTrName){
 		return abusiness.getAllTrAudiosByName(audioTrName);
@@ -64,22 +57,6 @@ public class Facade {
 		return abusiness.getAllAudioTifByUser(userId);
 	}
 	
-	public List<Audio> selectAllTrAudioByUser(int userId){
-		return abusiness.getAllTrAudioByUser(userId);
-	}
-	public List<Audio> selectAllArTrAudioByUser(int userId){
-		return abusiness.getAllArTrAudioByUser(userId);
-	}
-	public List<Audio> selectAllFrTrAudioByUser(int userId) {
-		return abusiness.getAllFrTrAudioByUser(userId);
-	}
-	public List<Audio> selectAllAngTrAudioByUser(int userId){
-		return abusiness.getAllAngTrAudioByUser(userId);
-	}
-	
-	public Audio selectTrAudioByAudioTifIdByLanguage(int audioTifinaghId,String Language){
-		return abusiness.getTrAudioByAudioTifIdByLanguage(audioTifinaghId, Language);
-	}
 	
 	public Audio selectAudioByNameByUser(String AudioName , User u) {
 		return abusiness.getAudioByNameByUser(AudioName, u);
@@ -96,4 +73,6 @@ public class Facade {
 	public void insertUserContact(String name , String email,String message) {
 		ucbusiness.addUserContact(name, email, message);
 	}
+	
+	
 }

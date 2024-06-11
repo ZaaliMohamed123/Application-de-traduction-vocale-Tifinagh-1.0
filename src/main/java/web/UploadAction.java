@@ -21,7 +21,7 @@ public class UploadAction extends Action{
 
 	@Override
 	String execute(HttpServletRequest req, HttpServletResponse resp) {
-		HttpSession session = req.getSession(false);
+		HttpSession session = req.getSession();
 		try {
 			//Translation language 
 			String language = req.getParameter("language");

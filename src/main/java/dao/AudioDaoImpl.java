@@ -16,29 +16,7 @@ public class AudioDaoImpl implements AudioDao{
 		cnx = SingletonConnection.getConnection();
 	}
 	
-	public void insert(Audio audio) {
-		
-		try {
-			String query = "INSERT INTO audiotifinagh (AudioId, AudioName, AudioSizeInKb, AudioExtension, AudioContent) VALUES (?,?, ?, ?, ?)";
-			PreparedStatement statement = cnx.prepareStatement(query);
-			// Set parameters for the PreparedStatement
-			statement.setInt(1, audio.getAudioId());
-            statement.setString(2, audio.getAudioName());
-            statement.setInt(3, audio.getAudioSizeInKb());
-            statement.setString(4, audio.getAudioExtension());
-            statement.setBytes(5, audio.getAudioContent());
-            // Execute the query
-            int rowsInserted = statement.executeUpdate();
-            if (rowsInserted > 0) {
-                System.out.println("Audio inserted successfully.");
-            }
-
-		} catch (Exception e) {
-			System.out.println("Error inserting audio: " + e.getMessage());
-            e.printStackTrace();
-		}
-        
-    }
+	
 	
 	public void insert(Audio audio,User u) {
 		
@@ -100,36 +78,7 @@ public class AudioDaoImpl implements AudioDao{
 		}
 	}
 
-	public Audio selectAudioById(int audioId) {
-        Audio audio = null;
-        
-        try {
-        	 String query = "SELECT * FROM audiotifinagh WHERE AudioId = ?";
-        	 PreparedStatement statement = cnx.prepareStatement(query);
-        	 
-        	// Set parameter for the PreparedStatement
-             statement.setInt(1, audioId);
-
-             // Execute the query
-             ResultSet resultSet = statement.executeQuery();
-
-             // Process the result set
-             while (resultSet.next()) {
-                 String audioName = resultSet.getString("AudioName");
-                 int audioSizeInKb = resultSet.getInt("AudioSizeInKb");
-                 String audioExtension = resultSet.getString("AudioExtension");
-                 byte[] audioContent = resultSet.getBytes("AudioContent");
-
-                 // Create a new Audio object with fetched data
-                 audio = new Audio(audioId, audioName, audioSizeInKb, audioExtension, audioContent);
-             }
-             
-		} catch (Exception e) {
-			System.out.println("Error selecting audio by AudioId: " + e.getMessage());
-            e.printStackTrace();
-		}
-        return audio;
-    }
+	
 	
 	public Audio selectAudioByName(String AudioName) {
 		Audio audio = null;
@@ -233,45 +182,7 @@ public class AudioDaoImpl implements AudioDao{
         return audioList;
     }
 	
-	public List<Audio> selectAllTrAudio(int audioTifinaghId) {
-        List<Audio> audioList = new ArrayList<>();
-        String query = "SELECT at.AudioTrId, at.AudioTrName, at.AudioLanguage, at.AudioSizeInKB, at.AudioExtension, at.AudioContent "
-                     + "FROM audiotranslated at "
-                     + "INNER JOIN audiotifinagh atif ON at.AudioTifinaghId = atif.AudioId "
-                     + "WHERE atif.AudioId = ?";
-
-        try {
-             PreparedStatement statement = cnx.prepareStatement(query);
-
-            // Set parameter for the PreparedStatement
-            statement.setInt(1, audioTifinaghId);
-
-            // Execute the query
-            ResultSet resultSet = statement.executeQuery();
-
-            // Process the result set
-            while (resultSet.next()) {
-                int audioTrId = resultSet.getInt("AudioTrId");
-                String audioTrName = resultSet.getString("AudioTrName");
-                String audioLanguage = resultSet.getString("AudioLanguage");
-                int audioSizeInKB = resultSet.getInt("AudioSizeInKB");
-                String audioExtension = resultSet.getString("AudioExtension");
-                byte[] audioContent = resultSet.getBytes("AudioContent");
-
-                // Create a new Audio object representing translated audio
-                Audio audio = new Audio(audioTrId, audioTrName, audioLanguage, audioSizeInKB, audioExtension, audioContent);
-
-                // Add Audio object to the list
-                audioList.add(audio);
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Error selecting translated audio by AudioTifinaghId: " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        return audioList;
-    }
+	
 	
 	public List<Audio> selectAllTrAudiosByName(String audioTrName) {
 	    List<Audio> audioList = new ArrayList<>();
@@ -310,45 +221,6 @@ public class AudioDaoImpl implements AudioDao{
 	}
 
 	
-	public Audio selectTrAudioByAudioTifIdByLanguage(int audioTifinaghId,String Language) {
-		Audio audio = null;
-        String query = "SELECT at.AudioTrId, at.AudioTrName, at.AudioLanguage, at.AudioSizeInKB, at.AudioExtension, at.AudioContent "
-                     + "FROM audiotranslated at "
-                     + "INNER JOIN audiotifinagh atif ON at.AudioTifinaghId = atif.AudioId "
-                     + "WHERE atif.AudioId = ? and at.AudioLanguage= ?";
-
-        try {
-             PreparedStatement statement = cnx.prepareStatement(query);
-
-            // Set parameter for the PreparedStatement
-            statement.setInt(1, audioTifinaghId);
-            statement.setString(2, Language);
-
-            // Execute the query
-            ResultSet resultSet = statement.executeQuery();
-
-            // Process the result set
-            while (resultSet.next()) {
-                int audioTrId = resultSet.getInt("AudioTrId");
-                String audioTrName = resultSet.getString("AudioTrName");
-                String audioLanguage = resultSet.getString("AudioLanguage");
-                int audioSizeInKB = resultSet.getInt("AudioSizeInKB");
-                String audioExtension = resultSet.getString("AudioExtension");
-                byte[] audioContent = resultSet.getBytes("AudioContent");
-
-                // Create a new Audio object representing translated audio
-                audio = new Audio(audioTrId, audioTrName, audioLanguage, audioSizeInKB, audioExtension, audioContent);
-
-                
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Error selecting translated audio by AudioTifinaghId: " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        return audio;
-    }
 	
 	public Audio selectTrAudioByAudioTifNameByLanguage(String audioTifinaghName,String Language) {
 		Audio audio = null;

@@ -1,6 +1,5 @@
 package business;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import beans.Audio;
@@ -32,10 +31,7 @@ public class AudioManager implements AudioBusiness{
 	}
 
 
-	@Override
-	public void add(Audio a) {
-		adao.insert(a);
-	}
+	
 	public void add(Audio a,User u) {
 		adao.insert(a,u);
 	}
@@ -51,10 +47,7 @@ public class AudioManager implements AudioBusiness{
 	}
 
 
-	@Override
-	public List<Audio> getAllTrAudio(int AudioTifId) {
-		return adao.selectAllTrAudio(AudioTifId);
-	}
+	
 
 
 	@Override
@@ -78,57 +71,8 @@ public class AudioManager implements AudioBusiness{
 		return adao.selectAllAudioTifByUser(userId);
 	}
 	
-	public List<Audio> getAllTrAudioByUser(int userId) {
-		List<Audio> AllTrAudios = new ArrayList<Audio>();
-		for(Audio a : adao.selectAllAudioTifByUser(userId)) {
-			for(Audio atr : getAllTrAudiosByName(a.getAudioName())) {
-				AllTrAudios.add(atr);
-			}
-		}	
-		return AllTrAudios;
-	}
 	
-	public List<Audio> getAllArTrAudioByUser(int userId) {
-		List<Audio> AllArTrAudios = new ArrayList<Audio>();
-		for(Audio a : getAllTrAudioByUser(userId)) {
-			if(a.getAudioLanguage().equals("Ar")) {
-				AllArTrAudios.add(a);
-			}
-		}
-		return AllArTrAudios;
-	}
 	
-	public List<Audio> getAllFrTrAudioByUser(int userId) {
-		List<Audio> AllFrTrAudios = new ArrayList<Audio>();
-		for(Audio a : getAllTrAudioByUser(userId)) {
-			if(a.getAudioLanguage().equals("Fr")) {
-				AllFrTrAudios.add(a);
-			}
-		}
-		return AllFrTrAudios;
-	}
-	
-	public List<Audio> getAllAngTrAudioByUser(int userId) {
-		List<Audio> AllAngTrAudios = new ArrayList<Audio>();
-		for(Audio a : getAllTrAudioByUser(userId)) {
-			if(a.getAudioLanguage().equals("Ang")) {
-				AllAngTrAudios.add(a);
-			}
-		}
-		return AllAngTrAudios;
-	}
-	
-	public Audio getTrAudioByAudioTifIdByLanguage(int audioTifinaghId,String Language){
-		String lang = Language;
-		if(lang.equals("Anglais")) {
-			lang = "Ang";
-		}else if(lang.equals("Français")) {
-			lang="Fr";
-		}else {
-			lang="Ar";
-		}
-		return adao.selectTrAudioByAudioTifIdByLanguage(audioTifinaghId, lang);
-	}
 
 
 	@Override
@@ -149,7 +93,6 @@ public class AudioManager implements AudioBusiness{
 	public void remove(int AudioId) {
 		adao.delete(AudioId);
 	}
-
 
 
 	

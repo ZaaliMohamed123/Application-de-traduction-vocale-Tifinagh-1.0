@@ -34,7 +34,7 @@ public class ActionServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String url = req.getRequestURI();
+    	String url = req.getRequestURI();
         System.out.println(url);
         String key = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf(".do"));
         System.out.println(key);
