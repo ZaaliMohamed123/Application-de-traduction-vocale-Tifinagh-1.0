@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traduction D'audio Tifinagh</title>
+    <title>Tifinagh Audio Translation</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/ResultUploadAudioPageStyleSheet.css">
 </head>
 <body>
@@ -18,8 +18,8 @@
 		
 	%>
 	<div class="container">
-        <h1>Traduction D'audio Tifinagh</h1>
-        <h2 style="text-align: center;">L'audio existe déjà</h2><br>
+        <h1>Tifinagh Audio Translation</h1>
+        <h2 style="text-align: center;">Audio Already Exists</h2><br>
         <div class="audio-section">
             <h2>Tifinagh <%=a0.getAudioName() %></h2>
             <audio controls>

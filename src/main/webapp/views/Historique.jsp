@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historique</title>
+    <title>History</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/HistoriqueCss.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
         	<%
         		List<Audio> AudioTif = (List<Audio>)request.getAttribute("AudioTifinagh");
         	%>
-            <h1>Votre Historique</h1>
+            <h1>History</h1>
             <%
             	if(AudioTif.size()>0){
             %>
@@ -58,9 +58,9 @@
             %>
             <br>
             <br>
-            <h2>Historique vide </h2>
+            <h2>Empty history</h2>
             <br>
-            <h2>Profitez de notre service de translation </h2>
+            <h2>Enjoy our translation service </h2>
             <%
             	}
             %>
