@@ -13,7 +13,7 @@
 	%>
     <div class="container">
         <div class="user">
-            Bonjour <%=u.getFullName() %>
+            Welcome <%=u.getFullName() %>
         </div>
         <form action="Upload.do" method="post" enctype="multipart/form-data">
         	
